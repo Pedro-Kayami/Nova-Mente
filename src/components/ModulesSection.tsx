@@ -6,10 +6,10 @@ export type StudyModule = {
   topic: string
   description: string
   icon: string
-  accent: string
   steps: number
   insight: string
   image: string
+  mediaBackground: string
 }
 
 type ModulesSectionProps = {
@@ -82,10 +82,10 @@ const ModuleCard = ({ module, currentStep, onAdvance }: ModuleCardProps) => {
 
   return (
     <article className="module-card">
-      <div className="module-card__accent" style={{ backgroundImage: module.accent }}>
+      <div className="module-card__accent" style={{ backgroundColor: module.mediaBackground }}>
         <span>{module.icon}</span>
       </div>
-      <div className="module-card__media">
+      <div className="module-card__media" style={{ backgroundColor: module.mediaBackground }}>
         <img src={module.image} alt={`Visual do módulo ${module.topic}`} loading="lazy" />
       </div>
       <div className="module-card__body">

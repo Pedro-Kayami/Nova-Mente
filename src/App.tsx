@@ -18,9 +18,9 @@ const studyModules: StudyModule[] = [
     description:
       'Planeje refeições inteligentes, entenda como combinar macros e mantenha energia para treinos e estudos.',
     icon: '🥗',
-    accent: 'linear-gradient(135deg, #6dd5ed, #2193b0)',
     steps: 8,
     image: alimentacaoImg,
+    mediaBackground: '#16a34a',
     insight: 'Protocolos rápidos + checklists de abastecimento semanal.',
   },
   {
@@ -30,9 +30,9 @@ const studyModules: StudyModule[] = [
     description:
       'Organize o orçamento, domine juros compostos e construa reservas que sustentam seus objetivos heroicos.',
     icon: '💰',
-    accent: 'linear-gradient(135deg, #f7971e, #ffd200)',
     steps: 8,
     image: economiaImg,
+    mediaBackground: '#facc15',
     insight: 'Dashboards práticos para decisões em 5 minutos.',
   },
   {
@@ -42,9 +42,9 @@ const studyModules: StudyModule[] = [
     description:
       'Crie rituais de foco, recupere energia emocional e fortaleça o autocuidado diário.',
     icon: '🧠',
-    accent: 'linear-gradient(135deg, #c471ed, #f64f59)',
     steps: 8,
     image: saudeMentalImg,
+    mediaBackground: '#1d4ed8',
     insight: 'Ferramentas de respiração guiada e diário de vitórias.',
   },
 ]
