@@ -23,6 +23,17 @@ const HeroSection = ({ stats, studentName }: HeroSectionProps) => {
           Bem-vindo, {formattedName}
           <span>este é o seu portal para evoluir Nutrição, Finanças e Saúde Mental.</span>
         </h1>
+        <div className="hero__intro">
+          <p className="hero__intro-text">
+            <strong>Início:</strong> Bem-vindo à Nova Mente, a plataforma que transforma o aprendizado em uma experiência divertida, interativa e personalizada.
+          </p>
+          <p className="hero__intro-text">
+            Aqui, estudantes aprendem enquanto jogam, e educadores acompanham o progresso em tempo real.
+          </p>
+          <p className="hero__intro-text">
+            Descubra uma nova forma de ensinar e aprender — simples, envolvente e feita para o futuro da educação.
+          </p>
+        </div>
         <p className="subtitle">
           Metodologia gamificada com {modules} módulos, {stagesPerModule} etapas cada, para você ganhar
           energia, clareza financeira e equilíbrio emocional sem perder ritmo.

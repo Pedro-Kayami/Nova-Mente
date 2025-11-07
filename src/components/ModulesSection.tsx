@@ -16,6 +16,33 @@ type ModulesSectionProps = {
   modules: StudyModule[]
 }
 
+const platformNarratives = [
+  {
+    id: 'nutrition',
+    category: 'Nutrição',
+    hero: 'Nutrix',
+    summary:
+      'Nutrix é o herói da energia e da boa alimentação! Ele ensina como escolher os melhores alimentos, montar pratos equilibrados e cuidar do corpo com sabedoria.',
+    detail: 'Em cada desafio, os alunos aprendem que comer bem é o primeiro passo para se sentir forte e disposto todos os dias.',
+  },
+  {
+    id: 'finance',
+    category: 'Educação Financeira',
+    hero: 'Economan',
+    summary:
+      'Economan é o guardião das finanças inteligentes! Ele mostra como transformar cada moeda em oportunidade, ensinando a planejar, economizar e realizar sonhos.',
+    detail: 'A cada missão, as crianças aprendem a lidar com o dinheiro de forma responsável e divertida.',
+  },
+  {
+    id: 'mental-health',
+    category: 'Saúde Mental',
+    hero: 'Psynapse',
+    summary:
+      'Psynapse é a heroína do equilíbrio emocional! Com empatia e sabedoria, ela ajuda a entender as emoções, fortalecer o foco e cuidar da mente.',
+    detail: 'Suas atividades promovem autoconhecimento, calma e bem-estar — essenciais para aprender e viver melhor.',
+  },
+]
+
 const ModulesSection = ({ modules }: ModulesSectionProps) => {
   const modulesById = useMemo(
     () =>
@@ -55,6 +82,21 @@ const ModulesSection = ({ modules }: ModulesSectionProps) => {
           <p>Use a seta para avançar de fase e acompanhar a porcentagem concluída em cada trilha.</p>
         </div>
         <span className="section-pill">Progresso em tempo real</span>
+      </div>
+      <div className="modules__narrative">
+        <p className="modules__narrative-label">Plataforma</p>
+        <div className="modules__narrative-grid">
+          {platformNarratives.map((story) => (
+            <article key={story.id} className="narrative-card">
+              <header>
+                <p className="narrative-card__category">{story.category}</p>
+                <h3>{story.hero}</h3>
+              </header>
+              <p className="narrative-card__summary">{story.summary}</p>
+              <p className="narrative-card__detail">{story.detail}</p>
+            </article>
+          ))}
+        </div>
       </div>
 
       <div className="modules__grid">

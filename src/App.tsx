@@ -61,6 +61,71 @@ const navigationTabs = [
   { key: 'contato', label: 'Contato' },
 ] as const
 
+const subscriptionPlans = [
+  {
+    id: 'basic',
+    name: 'Plano Básico',
+    badge: 'Gratuito',
+    description:
+      'Ideal para conhecer a plataforma e explorar as primeiras aventuras com acesso limitado, mas sem deixar de aprender.',
+    features: [
+      'Acesso a módulos introdutórios de Nutrição, Saúde Mental e Educação Financeira',
+      'Missões e desafios iniciais com recompensas básicas',
+      'Relatórios de progresso simples',
+      'Suporte por e-mail',
+      'Presença de anúncios para manter o plano gratuito',
+    ],
+  },
+  {
+    id: 'premium',
+    name: 'Plano Premium',
+    badge: 'Completo e sem anúncios',
+    description:
+      'A melhor experiência individual para aproveitar todo o conteúdo e recursos sem interrupções e com personalização.',
+    features: [
+      'Acesso total a todos os módulos e futuras atualizações',
+      'Experiência totalmente livre de anúncios',
+      'Personalização do avatar e do ambiente de jogo',
+      'Relatórios detalhados de desempenho e evolução',
+      'Missões especiais e eventos exclusivos',
+      'Suporte prioritário e treinamentos rápidos sobre a plataforma',
+    ],
+  },
+  {
+    id: 'enterprise',
+    name: 'Plano Empresarial',
+    badge: 'Para escolas e instituições',
+    description:
+      'Solução desenhada para integrar a Nova Mente ao projeto pedagógico e acompanhar o progresso de turmas inteiras.',
+    features: [
+      'Painel de gestão acadêmica com relatórios por turma e aluno',
+      'Ferramentas de monitoramento e avaliação alinhadas à escola',
+      'Treinamento e suporte especializado para professores',
+      'Conteúdos personalizados e planos de aula integrados',
+      'Suporte técnico e pedagógico dedicado',
+      'Descontos progressivos conforme o número de alunos licenciados',
+    ],
+  },
+] as const
+
+const educationalBenefits = [
+  'Promove o aprendizado ativo e significativo, aumentando a participação e o interesse do aluno.',
+  'Utiliza gamificação para transformar o ensino em uma experiência divertida e interativa.',
+  'Ensina nutrição, saúde mental e educação financeira de forma prática e acessível.',
+  'Desenvolve pensamento crítico, autonomia, responsabilidade e empatia.',
+  'Gera relatórios automáticos de desempenho para professores e escolas.',
+  'Oferece trilhas de aprendizagem personalizadas e alinhadas à BNCC.',
+  'Envolve os pais no processo educacional com acompanhamento em tempo real.',
+  'Disponibiliza orientações e atividades familiares que fortalecem vínculos.',
+  'Garante acessibilidade e inclusão com interface intuitiva e recursos adaptativos.',
+  'Valoriza a diversidade e o respeito às diferenças.',
+  'Reduz a carga administrativa dos educadores, otimizando o acompanhamento escolar.',
+  'Estimula hábitos saudáveis e conscientes desde a infância.',
+  'Introduz tecnologias como realidade aumentada e IA para ampliar a experiência.',
+  'Mantém atualizações constantes para garantir conteúdo moderno e relevante.',
+  'Conecta-se às principais tendências globais de educação digital e metodologias ativas.',
+] as const
+
 type TabKey = (typeof navigationTabs)[number]['key']
 
 type ViewMode = 'student' | 'full'
@@ -180,27 +245,43 @@ function App() {
       case 'planos':
         return (
           <>
-            {renderInfoPanel({
-              title: 'Planos e assinaturas',
-              description:
-                'Escolha entre planos individuais, familiares ou corporativos. Tudo feito direto pelo portal.',
-              items: ['Plano Individual Hero', 'Plano Família Guardiã', 'Plano Escolas Visionárias'],
-            })}
+            <section className="plans">
+              <div className="plans__header">
+                <p className="eyebrow">Planos</p>
+                <h2>Três formatos para destravar o aprendizado</h2>
+                <p>Selecionamos opções gratuitas, completas e corporativas para apoiar estudantes, famílias e escolas.</p>
+              </div>
+              <div className="plans__grid">
+                {subscriptionPlans.map((plan) => (
+                  <article key={plan.id} className={`plan-card plan-card--${plan.id}`}>
+                    <div className="plan-card__head">
+                      <span className="plan-card__badge">{plan.badge}</span>
+                      <h3>{plan.name}</h3>
+                      <p className="plan-card__description">{plan.description}</p>
+                    </div>
+                    <ul className="plan-card__list">
+                      {plan.features.map((feature) => (
+                        <li key={feature}>{feature}</li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+            </section>
             <RegistrationSection />
           </>
         )
       case 'beneficios':
         return renderInfoPanel({
           title: 'Benefícios educacionais',
-          description:
-            'Integramos saúde mental, nutrição e educação financeira para formar heróis com visão 360º.',
-          items: ['Gamificação com metas semanais', 'Acompanhamento multidisciplinar', 'Comunidade segura para alunos'],
+          description: 'Benefícios educacionais da plataforma Nova Mente e do ecossistema gamificado.',
+          items: educationalBenefits,
         })
       case 'sobre':
         return renderInfoPanel({
           title: 'Sobre nós',
           description:
-            'A Academia dos Heróis nasceu para unir ciência e ludicidade. Nosso time é formado por nutricionistas, psicólogos e educadores financeiros.',
+            'A Nova Mente nasceu com o propósito de revolucionar o aprendizado por meio da tecnologia e da criatividade. Somos uma startup brasileira comprometida com inclusão digital e educação de qualidade, unindo educadores, desenvolvedores e designers para tornar o aprendizado acessível, divertido e eficiente.',
         })
       case 'contato':
         return renderInfoPanel({
