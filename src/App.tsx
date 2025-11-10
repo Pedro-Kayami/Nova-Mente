@@ -177,7 +177,7 @@ function App() {
     </section>
   )
 
-  const renderInfoPanel = (props: { title: string; description: string; items?: string[] }) => (
+  const renderInfoPanel = (props: { title: string; description: string; items?: readonly string[] }) => (
     <section className="info-panel">
       <h2>{props.title}</h2>
       <p>{props.description}</p>
