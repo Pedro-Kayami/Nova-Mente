@@ -232,9 +232,16 @@ function App() {
         return renderInfoPanel({
           title: 'Guia de uso',
           description:
-            'Siga as etapas para aproveitar os estudos gamificados. Cada passo libera materiais e orientações práticas.',
-          items: ['Login com uma conta ativa', 'Escolha o módulo prioritário', 'Avance etapa por etapa com a seta', 'Registre insights e dúvidas na área de mentorias'],
+            'Confira o passo a passo para criar a conta, escolher o plano e aproveitar todo o suporte da plataforma.',
+          items: [
+            '1. Cria\u00e7\u00e3o da Conta \u2014 Escolha o tipo de perfil (Escola, Professor, Respons\u00e1vel ou Aluno). O cadastro \u00e9 r\u00e1pido e pode ser feito pelo site ou aplicativo (Android e iOS).',
+            '2. Escolha do Plano \u2014 Depois do cadastro, selecione entre Plano B\u00e1sico, Plano Premium ou Plano Empresarial para ajustar os recursos \u00e0 sua necessidade.',
+            '3. Treinamento e Orienta\u00e7\u00e3o Inicial \u2014 Escolas recebem treinamento online gratuito; pais e respons\u00e1veis acessam guias pr\u00e1ticos e v\u00eddeos com suporte da equipe t\u00e9cnica e pedag\u00f3gica.',
+            '4. Aprendizado Gamificado \u2014 Alunos desbloqueiam miss\u00f5es, jogos e desafios personalizados para Nutri\u00e7\u00e3o, Educa\u00e7\u00e3o Financeira e Sa\u00fade Mental, estimulando racioc\u00ednio e habilidades socioemocionais.',
+            '5. Acompanhamento em Tempo Real \u2014 Professores, respons\u00e1veis e alunos monitoram o progresso por pain\u00e9is e relat\u00f3rios que indicam pontos fortes, dificuldades e atividades recomendadas.',
+          ],
         })
+
       case 'escolas':
         return renderInfoPanel({
           title: 'Para escolas e pais',
